@@ -7,7 +7,7 @@ from behave import then
 try:
     DOCKER_CLIENT = docker.Client(version="1.22")
 except:
-    DOCKER_CLIENT = docker.APIClient(version="1.22")
+    DOCKER_CLIENT = docker.from_env(version="1.22").api
 
 
 @then(u'the image should contain label {label}')

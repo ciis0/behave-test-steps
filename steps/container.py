@@ -34,7 +34,7 @@ import time
 try:
     d = docker.Client(version="1.22")
 except:
-    d = docker.APIClient(version="1.22")
+    d = docker.from_env(version="1.22").api
 
 
 class ExecException(Exception):
